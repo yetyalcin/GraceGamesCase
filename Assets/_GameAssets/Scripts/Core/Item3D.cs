@@ -65,6 +65,7 @@ namespace Game.Core
             GridPoint gridPoint = target.GetComponent<GridPoint>();
             GridController gridController = gridPoint.GetComponentInParent<GridController>();
 
+            this.gameObject.SetActive(false);
             gridPoint.FillGrid(_itemIndex);
             gridPoint.SetHasReached(true);
             gridController.DeleteMatchedItems();
@@ -75,7 +76,6 @@ namespace Game.Core
             if (gridController.IsAllGridPointsFull())
                 GamePlayManager.Instance.SetGameToEnd();
 
-            this.gameObject.SetActive(false);
         }
         #endregion
 
