@@ -12,6 +12,7 @@ namespace Game.Managers
         public UnityAction EvntMergeComplete;
         public UnityAction<int> EvntSlotFilled;
         public UnityAction EvnSlotUnFill;
+        public UnityAction<int> EvntDecreeseLife;
     
         #region UnityBuildinFunctions
     private void Awake()
@@ -32,6 +33,10 @@ namespace Game.Managers
         public void SlotUnFill()
         {
             EvnSlotUnFill?.Invoke();
+        }
+        public void DecreeseLife(int value)
+        {
+            EvntDecreeseLife?.Invoke(value);
         }
         #endregion
     }

@@ -24,6 +24,7 @@ namespace Game.Managers
 
         [SerializeField] private float _levelCounterTime;
         [SerializeField] private int _targetFoodCount;
+        public int LifeCount;
         private PlayerController _playerController;
 
         #region UnityBuildinFunctions

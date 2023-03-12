@@ -66,6 +66,7 @@ namespace Game.Core
             GridController gridController = gridPoint.GetComponentInParent<GridController>();
 
             this.gameObject.SetActive(false);
+
             gridPoint.FillGrid(_itemIndex);
             gridPoint.SetHasReached(true);
             gridController.DeleteMatchedItems();
@@ -74,8 +75,15 @@ namespace Game.Core
             GamePlayManager.Instance.GetPlayerController().RemoveCurrentMoveList(this.transform);
 
             if (gridController.IsAllGridPointsFull())
+            {
+                DecreeseLife();
                 GamePlayManager.Instance.SetGameToEnd();
+            }
 
+        }
+        private void DecreeseLife()
+        {
+            MainMenuCanvasUI.Instance.DecreeseLifeCount(1);
         }
         #endregion
 

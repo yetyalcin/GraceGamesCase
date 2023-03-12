@@ -24,6 +24,7 @@ namespace Game.UI
         {
             _scoreText.text = value.ToString();
         }
+        
         #endregion
 
     }
